@@ -21,9 +21,8 @@ const router = express.Router();
 router.use(express.json({ type: 'application/json' }));
 
 function getOctokit(installationId) {
-  const privateKeyPath = process.env.PRIVATE_KEY_PATH || './private-key.pem';
-  const absolutePath = path.resolve(process.cwd(), privateKeyPath);
-  const privateKey = fs.readFileSync(absolutePath, 'utf-8');
+  const privateKey = process.env.PRIVATE_KEY || 
+  fs.readFileSync(path.resolve(process.cwd(), process.env.PRIVATE_KEY_PATH || './private-key.pem'), 'utf-8');
 
   const auth = createAppAuth({
     appId: process.env.APP_ID,
