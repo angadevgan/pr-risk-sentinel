@@ -1,0 +1,12 @@
+node_modules/
+.env
+.env.local
+*.pem
+private-key.pem
+dist/
+build/
+.DS_Store
+*.log
+npm-debug.log*
+.vscode/
+.idea/

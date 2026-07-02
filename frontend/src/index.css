@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #0A0A0B;
+  color: #FAFAFA;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.mono { font-family: 'JetBrains Mono', monospace; }
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #0A0A0B; }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+
+/* Card */
+.card {
+  background: #111114;
+  border: 1px solid #222228;
+  border-radius: 10px;
+  transition: border-color .15s;
+}
+.card:hover { border-color: #333340; }
+.card-interactive:hover { border-color: #7C3AED60; cursor: pointer; }
+
+/* Table */
+.data-table { width: 100%; border-collapse: collapse; }
+.data-table th {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; font-weight: 500;
+  color: #52525B; letter-spacing: .08em; text-transform: uppercase;
+  padding: 10px 16px; text-align: left;
+  border-bottom: 1px solid #222228;
+}
+.data-table td { padding: 13px 16px; border-bottom: 1px solid #18181C; }
+.data-table tbody tr:last-child td { border-bottom: none; }
+.data-table tbody tr { transition: background .1s; }
+.data-table tbody tr:hover { background: #16161A; }
+
+/* Risk pill */
+.risk-pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 3px 10px; border-radius: 99px;
+  font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500;
+  border: 1px solid; letter-spacing: .04em;
+}
+.risk-low    { color: #22C55E; border-color: #22C55E30; background: #22C55E0D; }
+.risk-medium { color: #EAB308; border-color: #EAB30830; background: #EAB3080D; }
+.risk-high   { color: #F97316; border-color: #F9731630; background: #F973160D; }
+.risk-critical { color: #EF4444; border-color: #EF444430; background: #EF44440D; }
+
+/* Dot pulse */
+.dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+@keyframes pulse { 0%,100%{opacity:1}50%{opacity:.3} }
+.dot-pulse { animation: pulse 2s ease-in-out infinite; }
+
+/* Stat bar animation */
+@keyframes barGrow { from { width: 0 } }
+.bar-grow { animation: barGrow .6s cubic-bezier(.4,0,.2,1) both; }
+
+/* Score ring */
+@keyframes ringDraw { from { stroke-dashoffset: 283 } }
+.ring-draw { animation: ringDraw 1.2s cubic-bezier(.4,0,.2,1) both; }
+
+/* Slide in */
+@keyframes slideIn { from { opacity:0; transform:translateY(6px) } }
+.slide-in { animation: slideIn .3s ease-out both; }
