@@ -231,7 +231,7 @@ SaaS-PM/
 
 **Angad Devgan**  
 Final Year CSE Student — CCET Chandigarh  
-[GitHub](https://github.com/angadevgan) · [LinkedIn](https://linkedin.com/in/angadevgan)
+[GitHub](https://github.com/angadevgan) · [LinkedIn](https://linkedin.com/in/angad-devgan)
 
 ---
 
