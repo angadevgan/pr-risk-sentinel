@@ -2,7 +2,8 @@ import { query } from '../db/index.js';
 import { computeRiskScore, explainTopDrivers } from '../risk-engine/index.js';
 
 export async function upsertInstallation(payload) {
-  const { id, account } = payload;
+  const { id } = payload;
+  const account = payload.account || { login: 'unknown', type: 'User' };
   const res = await query(
     `INSERT INTO installations (github_installation_id, account_login, account_type)
      VALUES ($1, $2, $3)
