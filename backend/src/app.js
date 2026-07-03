@@ -6,6 +6,7 @@ import { events, PR_SCORED_EVENT } from '../services/eventBus.js';
  * Probot app entry point. Probot handles webhook signature verification,
  * installation auth tokens, and octokit client setup for us — this is
  * the standard framework GitHub itself recommends for building Apps.
+ * comment
  */
 export default (app, { getRouter }) => {
   app.log.info('PR Risk Sentinel app loaded');
@@ -98,3 +99,4 @@ export default (app, { getRouter }) => {
   const router = getRouter('/api');
   router.get('/health', (req, res) => res.json({ status: 'ok', service: 'pr-risk-sentinel' }));
 };
+
